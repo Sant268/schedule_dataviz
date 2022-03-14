@@ -14,6 +14,8 @@ def get_plots(name):
         df = pd.read_csv('ollie.csv')
     elif name == "Mori":
         df = pd.read_csv('mori.csv')
+    elif name == "Ame":
+        df = pd.read_csv('ame.csv')
     else:
         return
 
@@ -51,7 +53,7 @@ st.title('Schedule Viz')
 
 option = st.selectbox(
      'Who\'s your oshi?',
-     ('Risu', 'Reine', 'Ollie', 'Mori'))
+     ('Risu', 'Reine', 'Ollie', 'Mori', 'Ame'))
 if (option == "Risu"):
     get_plots("Risu")
 elif option == "Reine":
@@ -60,3 +62,5 @@ elif option == "Ollie":
     get_plots("Ollie")
 elif option == "Mori":
     get_plots("Mori")
+elif option == "Ame":
+    get_plots("Ame")
