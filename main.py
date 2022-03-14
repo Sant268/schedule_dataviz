@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import calendar
 import datetime as dt
+@st.cache
 def get_plots(name):
     if name == "Risu":
         df = pd.read_csv('risu.csv')
