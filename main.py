@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import calendar
 import datetime as dt
-@st.cache
+@st.cache(suppress_st_warning=True)
 def get_plots(name):
     if name == "Risu":
         df = pd.read_csv('risu.csv')
@@ -47,9 +47,11 @@ def get_plots(name):
     plt.figure(figsize=(14, 17))
     heat2 = sns.heatmap(df3, annot=True, fmt=".1%")
     st.pyplot(fig=heat2.figure)
+st.title('Schedule Viz')
+
 option = st.selectbox(
      'Who\'s your oshi?',
-     ('Risu', 'Reine', 'Ollie'))
+     ('Risu', 'Reine', 'Ollie', 'Mori'))
 if (option == "Risu"):
     get_plots("Risu")
 elif option == "Reine":
